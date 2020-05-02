@@ -1,0 +1,26 @@
+.header{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}
+
+.header>nav>ul>.inicio>a{
+    color: red;
+    background: burlywood;
+    grid-column:1/4;
+    justify-self:center;
+}
+
+.header>nav>ul>.contenido{
+    grid-column:3/4;
+}
+
+.header>nav>ul>.contacto{
+    grid-column:4/-1;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}

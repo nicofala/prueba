@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: #ECD4FF;
+    font-family:'Roboto', sans-serif;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1500px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,auto);
+    grid-gap: 20px;
+
+    grid-template-areas:"contenido contenido sidebar"
+                        "widget-1 widget-2 sidebar"
+                        "footer footer footer";
+}
+
+header{
+    display: grid;
+    margin: 20px auto;
+    grid-template-columns: repeat(4,1fr);
+    width: 90%;
+    max-width: 1500px;
+    justify-items: stretch;
+    text-align: center;
+    font-size: 30px;
+    align-items: center;
+    grid-template-areas:"logotipo inicio contenido contacto"
+}
+
+header>.inicio{
+    grid-area:inicio;
+}
+
+header>.contenido{
+    grid-area:contenido;
+}
+
+header>.contacto{
+    grid-area:contacto;
+}
+
+header>.inicio:hover, 
+header>.contenido:hover,
+header>.contacto:hover{
+    background: blanchedalmond;
+}
+
+.contenedor > main,
+.contenedor > aside,
+.contenedor > div,
+.contenedor > footer{
+    padding: 20px;
+    color:black;
+    background: #FFCCF9;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .25);
+    border-radius: 4px;
+}
+
+header .inicio,
+header .contenido,
+header .contacto{
+    background: #C4FAF8; 
+    border: 1px solid black;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+header .inicio a,
+header .contenido a,
+header .contacto a{
+    color: black;
+    text-decoration:none;
+}
+
+.contenedor main{
+    grid-area:contenido;
+}
+
+.contenedor aside{
+    background:#BFFCC6;
+    box-shadow: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    grid-area:sidebar;
+}
+
+.contenedor div{
+    background: #55afd5;
+    color: white;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .widget-1{
+    grid-area:widget-1;
+}
+
+.contenedor .widget-2{
+    grid-area:widget-2;
+}
+
+.contenedor footer{
+    background:#FF9CEE;
+    color: white;
+    grid-area:footer;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px){
+    .contenedor{
+        grid-template-areas:"contenido contenido contenido"
+                            "sidebar sidebar sidebar"
+                            "widget-1 widget-1 widget-1"
+                            "widget-2 widget-2 widget-2"
+                            "footer footer footer";
+        } 
+    }
